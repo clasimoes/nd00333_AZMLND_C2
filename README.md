@@ -1,5 +1,5 @@
 # Machine Learning Engineer with Microsoft Azure
-## Project 2 - Operationalizing Machine Learning - Clarisse Simoes Ribeiro - December 2020
+## Project 2 - Operationalizing Machine Learning \n Clarisse Simoes Ribeiro - December 2020
 
 This project aims to automate the Machine Learning process going through the model selection, deployment, and consumption using an HTTP API. The dataset provided contains information about a bank marketing campaign and indicates if a customer subscribed to a fixed-term deposit. The model we aim to develop should predict the customer will or won't subscribe to this term. At the end of the project, we create and deploy a Pipeline with the experiment steps that can be consumed through an HTTP endpoint, and we test it..
 
