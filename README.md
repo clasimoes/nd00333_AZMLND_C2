@@ -46,7 +46,7 @@ This project aims to automate the Machine Learning process going through the mod
    - Creation of service principal to access the workspace used in the project
 
 1. Dataset register
-   - Inclusion of the Bank marketing dataset in Azure ML data storage
+   - Inclusion of the Bank marketing dataset in Azure ML data storage:
    ![Bank marketing dataset registered](step2-registered-dataset.png)
 
 2. Automated ML to choose the best model
@@ -69,35 +69,37 @@ This project aims to automate the Machine Learning process going through the mod
    ![Logs printed by the python script logs.py](step4-logs2.png)
 
 5. Swagger Documentation
-   - Input: swagger.json w/ best model endpoint data + docker port mapped to localhost port + python server exposing swagger.json
-   - Output: local web app w/ automated documentation about the best model endpoint API
    - In this step, we create a swagger local service and deploy the documentation of the best model created in step 3. The AzureML platform already provides the swagger.json file that can be consumed by the Swagger web app.
+   - Swagger Web App showing the HTTP API methods and responses for the deployed model:
    ![Swagger Web App showing the HTTP API methods and responses for the deployed model](step5-swagger-2.png)
+
 6. Model endpoints consumption
-   - Inputs: python script (endpoint.py) w/ example new data for prediction + scoring URI (URI of our best model) + authentication primary key
-   - Output: data.json + API response
    - In this step, we send two entities of data for our best model using a python script that interacts with the HTTP API deployed before. Our model sends its prediction as a response and this is printed at the end of the script.
+   - Response of model endpoint:
    ![Response of model endpoint](step6-consume-endpoint.png)
+
 7. Benchmarking the API
-   - Input: benchmark.sh + coring URI (URI of our best model) + authentication primary key
-   - Output: performance results
    - Here we use Apache Benchmarking to test the performance of our model and understand if it is satisfactory. For this, we send 10 requests of prediction and measure the meantime that the API took to respond.
+   - Apache Benchmarking output with the performance of our API:
    ![Apache Benchmarking output: performance of our API](step6-benchmark.png)
+
 8. Creating and publishing the pipeline
-   - Input: Python notebook + experiment name + cluster name + dataset
-   - Output: published pipeline endpoint (HTTP API)
-   - In this step, we use the python notebook provided in the exercise to create and publish a pipeline with the experiment done in this project. The pipeline consists of using the Bank marketing dataset as input to the Automated ML step that will have the best model as output. The 
-9. Interacting with the pipeline
-   - Input: published pipeline + authentication header
-   - Output: pipeline run status + best model
-   - In this step, we create an authentication header and send an HTTP post request to our pipeline endpoint and follow up the run using the Run Details widget provided by Python SDK.
+   - In this step, we use the python notebook provided in the exercise to create and publish a pipeline with the experiment done in this project. The pipeline consists of using the Bank marketing dataset as input to the Automated ML step that will have the best model as output. 
+   - Pipeline created in Pipeline section of AzureML Platform:
    ![Pipeline created in Pipeline section of AzureML Platform](step7-pipeline-section.png)
+   - Active Pipeline Endpoint:
    ![Active Pipeline Endpoint](step7-pipeline-endpoint.png)
+   - Pipeline view with the Bank Marketing dataset and the AutoML step. Note that the REST endpoint is ACTIVE:
    ![Pipeline view with the Bank Marketing dataset and the AutoML step. Note that the REST endpoint is ACTIVE.](step7-dataset+automlmodule.png)
+
+9. Interacting with the pipeline
+   - In this step, we create an authentication header and send an HTTP post request to our pipeline endpoint and follow up the run using the Run Details widget provided by Python SDK.
+   - Widget to get run details in Jupyter Notebook:
    ![Widget to get run details in Jupyter Notebook](step7-run-details.png)
+   - Scheduled run ("pipeline-rest-endpoint") coming from the Pipeline:
    ![Scheduled run ("pipeline-rest-endpoint") coming from the Pipeline](step7-runs.png)
    
 
-## Screen Recording
+## Screen Recording Link
 https://drive.google.com/file/d/1wXqG1fZY4yle9QWnFukgQk0VYMMXfVIS/view?usp=sharing
 
