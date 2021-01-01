@@ -73,7 +73,7 @@ In this step, we use the python notebook provided in the exercise to create and 
    #### Pipeline view with the Bank Marketing dataset and the AutoML step:
    ![Pipeline view with the Bank Marketing dataset and the AutoML step. Note that the REST endpoint is ACTIVE.](step7-dataset+automlmodule.png)
    #### The “Published Pipeline overview”, showing a REST endpoint and a status of ACTIVE:
-   ![The “Published Pipeline overview”, showing a REST endpoint and a status of ACTIVE](starter_files/step7-published-pipeline-overview.png)
+   ![The “Published Pipeline overview”, showing a REST endpoint and a status of ACTIVE](step7-published-pipeline-overview.png)
 
 ### Interacting with the pipeline
 In this step, we create an authentication header and send an HTTP post request to our pipeline endpoint and follow up the run using the Run Details widget provided by Python SDK.
